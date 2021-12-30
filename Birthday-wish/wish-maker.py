@@ -21,4 +21,18 @@ if l>=10:
 
     I will update it with other blocks, when I get time, feel free to use and wish your friends& family
     Run this program with Bday_wapp_char.
+
+````
+|#####|        |#####|
+ |###|          |###| 
+ |###|          |###| 
+ |###|  ______  |###| 
+ |###|  /####\  |###| 
+ |###| /######\ |###| 
+ |###|/###/\###\|###| 
+ |#######/  \###\###| 
+ |######/    \######| 
+ |#####/      \#####|
+
+```
     '''
