@@ -1,0 +1,40 @@
+#By : Pavan and Vanasri Vignesh
+import pywhatkit
+import re
+import csv
+import os
+
+print("SENDING MESSAGES THROUGH:")
+print("1.Giving Numbers Manually")
+print("2.Read the Contact file")
+choice=input()
+
+l=[]
+Message=input('hey, so what\'s the message?')
+
+
+if choice == '1':
+    num=int(input("Enter number of recipients:"))
+    for i in range(num):
+        l.append(input())
+
+if choice == '2':
+    filepath=input("Enter the file path:")
+    result = os.path.exists(filepath)
+    if result:
+        filepath=filepath.replace('\\','/')
+        f=open(filepath,'r')
+        for line in f:
+            if line != '\n':
+                line=line.rstrip("\n").split(',')
+                l.append('+'+line[1])
+        l=list(l[1:])
+        print(l)
+    else:
+        print("The File does not exist.")
+Time=input('and when should we send it?')
+t=re.findall(r'\d\d',Time)
+h,m=int(t[0]),int(t[1])
+for i in l:
+    pywhatkit.sendwhatmsg(i,Message,h,m,15,True,10)
+    m+=1
